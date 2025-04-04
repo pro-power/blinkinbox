@@ -1,0 +1,141 @@
+/* responsive.css - Add to your styles directory */
+
+/* Container responsiveness */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Section spacing */
+  .section {
+    margin-bottom: 2rem;
+  }
+  
+  /* Navbar styles */
+  .hamburger-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-top: 1px solid var(--gray-200);
+  }
+  
+  .mobile-nav.active {
+    display: flex;
+  }
+  
+  .desktop-nav {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  /* Card responsiveness */
+  .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  /* Form responsiveness */
+  .form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-input {
+    flex: 1;
+  }
+  
+  /* Email container responsiveness */
+  .email-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  /* Email preview responsiveness */
+  .email-preview {
+    word-break: break-all;
+    flex: 1;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .hamburger-button {
+      display: block !important;
+    }
+  
+    .desktop-nav {
+      display: none !important;
+    }
+  
+    .mobile-nav.active {
+      display: flex !important;
+    }
+  
+    .form-row {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .section {
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .email-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .email-preview {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  /* Animation classes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.3s ease forwards;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .spin {
+    animation: spin 2s linear infinite;
+  }
